@@ -40,3 +40,14 @@ if (form) {
         });
     });
 }
+
+// Ajustar los botones centrados a la izquierda de forma horizontal
+document.addEventListener("DOMContentLoaded", function() {
+    const nav = document.querySelector("nav ul");
+    if (nav) {
+        nav.style.display = "flex";
+        nav.style.justifyContent = "flex-start";
+        nav.style.alignItems = "center";
+        nav.style.gap = "10px";
+    }
+});
