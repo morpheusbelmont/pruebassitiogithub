@@ -3,19 +3,24 @@ function mostrarVentana(seccion, contenido) {
     const contenidoVentana = document.getElementById("contenidoVentana");
     const formularioContacto = document.getElementById("formularioContacto");
     
-    if (seccion === "contacto") {
-        formularioContacto.style.display = "block";
-        contenidoVentana.innerHTML = "";
-    } else {
-        formularioContacto.style.display = "none";
-        contenidoVentana.innerHTML = `<p>${contenido}</p>`;
+    if (ventana) {
+        if (seccion === "contacto") {
+            formularioContacto.style.display = "block";
+            contenidoVentana.innerHTML = "";
+        } else {
+            formularioContacto.style.display = "none";
+            contenidoVentana.innerHTML = `<p>${contenido}</p>`;
+        }
+        
+        ventana.style.display = "flex";
     }
-    
-    ventana.style.display = "block";
 }
 
 function cerrarVentana() {
-    document.getElementById("ventanaEmergente").style.display = "none";
+    const ventana = document.getElementById("ventanaEmergente");
+    if (ventana) {
+        ventana.style.display = "none";
+    }
 }
 
 // Envío del formulario con AJAX
@@ -40,14 +45,3 @@ if (form) {
         });
     });
 }
-
-// Ajustar los botones centrados a la izquierda de forma horizontal
-document.addEventListener("DOMContentLoaded", function() {
-    const nav = document.querySelector("nav ul");
-    if (nav) {
-        nav.style.display = "flex";
-        nav.style.justifyContent = "flex-start";
-        nav.style.alignItems = "center";
-        nav.style.gap = "10px";
-    }
-});
