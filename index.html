@@ -1,22 +1,48 @@
- <title>Landing Page</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
         <h1>Bienvenido a Nuestra Landing Page</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="mision.html">Misión</a></li>
-                <li><a href="vision.html">Visión</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li><a href="#" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+                <li><a href="#" onclick="mostrarSeccion('nosotros')">Nosotros</a></li>
+                <li><a href="#" onclick="mostrarSeccion('mision')">Misión</a></li>
+                <li><a href="#" onclick="mostrarSeccion('vision')">Visión</a></li>
+                <li><a href="#" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ubicacion')">Ubicación</a></li>
             </ul>
         </nav>
     </header>
     
-    <section>
+    <section id="inicio" class="seccion">
+        <h2>Inicio</h2>
+        <p>Bienvenido a nuestra plataforma. Explora y conoce más sobre nosotros.</p>
+    </section>
+    
+    <section id="nosotros" class="seccion" style="display:none;">
+        <h2>Nosotros</h2>
+        <p>Somos una empresa dedicada a...</p>
+    </section>
+    
+    <section id="mision" class="seccion" style="display:none;">
+        <h2>Misión</h2>
+        <p>Nuestra misión es...</p>
+    </section>
+    
+    <section id="vision" class="seccion" style="display:none;">
+        <h2>Visión</h2>
+        <p>Nuestra visión es...</p>
+    </section>
+    
+    <section id="contacto" class="seccion" style="display:none;">
         <h2>Contacto</h2>
         <form action="contacto.php" method="POST" id="contactForm">
             <label for="nombre">Nombre:</label>
@@ -33,6 +59,9 @@
         </form>
     </section>
     
-    <script src="script.js"></script>
+    <section id="ubicacion" class="seccion" style="display:none;">
+        <h2>Ubicación</h2>
+        <p>Nuestra empresa se encuentra en...</p>
+    </section>
 </body>
 </html>
